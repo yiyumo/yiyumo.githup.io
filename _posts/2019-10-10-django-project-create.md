@@ -1,5 +1,5 @@
 ---
-title: Another Sample Page
+title: Django create project
 published: true
 ---
 
