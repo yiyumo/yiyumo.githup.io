@@ -7,6 +7,7 @@
 ```bash
 mysqldump -uroot -p --default-character-set=utf8   --triggers -R --hex-blob --single-transaction -q  zkbc > /root/temp/zkbc20190121_1.sql;
 ```
+
 ---
 
 #### 将/root/temp/zkbc190121.sql; 路径下的数据库文件导入 zkbc_new数据库，导入的两种方式①②如下
