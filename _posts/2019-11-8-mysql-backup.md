@@ -12,7 +12,7 @@ mysqldump -uroot -p --default-character-set=utf8   --triggers -R --hex-blob --si
 #### 将/root/temp/zkbc190121.sql; 路径下的数据库文件导入 zkbc_new数据库，导入的两种方式①②如下
 方法1
 
-```shell script
+```shell
 mysql -uroot -p密码
 ```
 
@@ -30,14 +30,14 @@ import_db.sh
 import_Sql_file
 .sh用来在linux环境执行的脚本，内容：
 
-```shell script
+```
 #!/bin/bash
 /usr/bin/mysql -uroot -p'msds007'  < /root/temp/import_sql_file.txt
 ```
 
 第二个文件import_sql_file是.txt文件，只是.sh文件用来加载的，文件内容为要执行的导入指令：
 
-```
+```mysql
 set session sql_log_bin=0;
 use zkbc_new;
 source /root/temp/zkbc190121.sql
@@ -49,13 +49,13 @@ source /root/temp/zkbc190121.sql
 
 ### 使用 mysqldump 命令对单个库进行完全备份
 
-```shell script
+```
 mysqldump  -u  用户名   -p  [密码]   --databases   [数据库名]  >   /备份路径 /备份文件名
 ```
 
 ###数据恢复
 
-```shell script
+```
 mysql -uroot -p root
 drop database  [数据库名];
 source  /备份路径 /备份文件名
