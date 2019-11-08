@@ -4,7 +4,7 @@
 
 数据量太大可以不看日志什么的，直接备份，去掉--opt 还有 --extend--insert=false 【没有指定 --quick 或 --opt 选项，则会将整个结果集放在内存中。如果导出大数据库的话可能会出现问题。我们这里去掉了–opt,但加上了-q,该项在导出大表时很有用，它强制 mysqldump 从服务器查询取得记录直接输出而不是取得所有记录后将它们缓存到内存中。
 
-```shell script
+```bash
 mysqldump -uroot -p --default-character-set=utf8   --triggers -R --hex-blob --single-transaction -q  zkbc > /root/temp/zkbc20190121_1.sql;
 ```
 ---
@@ -12,7 +12,7 @@ mysqldump -uroot -p --default-character-set=utf8   --triggers -R --hex-blob --si
 #### 将/root/temp/zkbc190121.sql; 路径下的数据库文件导入 zkbc_new数据库，导入的两种方式①②如下
 方法1
 
-```shell
+```
 mysql -uroot -p密码
 ```
 
