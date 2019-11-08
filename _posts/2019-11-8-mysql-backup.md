@@ -4,16 +4,16 @@
 
 数据量太大可以不看日志什么的，直接备份，去掉--opt 还有 --extend--insert=false 【没有指定 --quick 或 --opt 选项，则会将整个结果集放在内存中。如果导出大数据库的话可能会出现问题。我们这里去掉了–opt,但加上了-q,该项在导出大表时很有用，它强制 mysqldump 从服务器查询取得记录直接输出而不是取得所有记录后将它们缓存到内存中。
 
-```bash
+```commandline
 mysqldump -uroot -p --default-character-set=utf8   --triggers -R --hex-blob --single-transaction -q  zkbc > /root/temp/zkbc20190121_1.sql;
 ```
 
----
+----
 
 #### 将/root/temp/zkbc190121.sql; 路径下的数据库文件导入 zkbc_new数据库，导入的两种方式①②如下
 方法1
 
-```
+```commandline
 mysql -uroot -p密码
 ```
 
@@ -31,7 +31,7 @@ import_db.sh
 import_Sql_file
 .sh用来在linux环境执行的脚本，内容：
 
-```
+```commandline
 #!/bin/bash
 /usr/bin/mysql -uroot -p'msds007'  < /root/temp/import_sql_file.txt
 ```
@@ -50,14 +50,17 @@ source /root/temp/zkbc190121.sql
 
 ### 使用 mysqldump 命令对单个库进行完全备份
 
-```
+```commandline
 mysqldump  -u  用户名   -p  [密码]   --databases   [数据库名]  >   /备份路径 /备份文件名
 ```
 
-###数据恢复
-
-```
+###数据恢复\
+```commandline
 mysql -uroot -p root
+```
+
+```mysql
+
 drop database  [数据库名];
 source  /备份路径 /备份文件名
 ```
