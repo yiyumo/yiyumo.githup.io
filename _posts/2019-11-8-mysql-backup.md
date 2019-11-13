@@ -5,7 +5,7 @@
 数据量太大可以不看日志什么的，直接备份，去掉--opt 还有 --extend--insert=false 【没有指定 --quick 或 --opt 选项，则会将整个结果集放在内存中。如果导出大数据库的话可能会出现问题。我们这里去掉了–opt,但加上了-q,该项在导出大表时很有用，它强制 mysqldump 从服务器查询取得记录直接输出而不是取得所有记录后将它们缓存到内存中。
 
 ```commandline
-mysqldump -u root -p --default-character-set=utf8   --triggers -R --hex-blob --single-transaction -q  zkbc > /root/temp/zkbc20190121_1.sql;
+mysqldump  -u  用户名   -p  [密码] --default-character-set=utf8   --triggers -R --hex-blob --single-transaction -q  zkbc > /root/temp/zkbc20190121_1.sql;
 ```
 
 ----
@@ -14,7 +14,7 @@ mysqldump -u root -p --default-character-set=utf8   --triggers -R --hex-blob --s
 方法1
 
 ```commandline
-mysql -u root -p 密码
+mysql  -u  用户名   -p  [密码]
 ```
 
 在mysql连接的当前会话里，输入如下命令
@@ -33,7 +33,7 @@ import_Sql_file
 
 ```commandline
 #!/bin/bash
-/usr/bin/mysql -u root -p 'msds007'  < /root/temp/import_sql_file.txt
+/usr/bin/mysql -u  用户名   -p  [密码] < /root/temp/import_sql_file.txt
 ```
 
 第二个文件import_sql_file是.txt文件，只是.sh文件用来加载的，文件内容为要执行的导入指令：
@@ -55,8 +55,8 @@ mysqldump  -u  用户名   -p  [密码]   --databases   [数据库名]  >   /备
 ```
 
 ###数据恢复\
-```commandline
-mysql -uroot -p root
+```chameleon
+mysql  -u  用户名   -p  [密码]
 ```
 
 ```mysql
