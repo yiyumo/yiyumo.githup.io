@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0bcc915-2b41-40cb-ac16-1c098cfb28ae" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/aaa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/blog_image/2020-02/sql的数据定义语句.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/blog_image/2020-02/sql的结构.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/blog_image/2020-02/关系模型的结构.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/blog_image/2020-02/数据库.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/blog_image/2020-02/笛卡尔积.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2019-12-4-python基础之属性及方法.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2019-12-4-python基础之属性及方法.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2020-02-18-数据库基础01.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2020-02-18-数据库基础01.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +62,7 @@
       <workItem from="1575426336355" duration="15380000" />
       <workItem from="1581841435856" duration="1977000" />
       <workItem from="1582025464751" duration="11455000" />
+      <workItem from="1582040018405" duration="227000" />
     </task>
     <servers />
   </component>
@@ -100,9 +95,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="186" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1581842190131" />
-    <state x="375" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1582026174787">
+    <state x="375" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1582040026814">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="375" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582026174787" />
+    <state x="375" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582040026814" />
   </component>
 </project>
