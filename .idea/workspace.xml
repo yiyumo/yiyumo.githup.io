@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0bcc915-2b41-40cb-ac16-1c098cfb28ae" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/2019-12-4-PEP8.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/2019-12-4-python基础之属性及静态方法.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/2019-12-14-class/class.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/2019-12-14-class/class2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2020-02-18-数据库基础01.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2020-02-18-数据库基础01.md" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,29 +24,30 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1S2Xj9QmCGevFqUhecPSA8wkET6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/blog_image/2020-02-15" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\zhouz\Desktop\yiyumo.githup.io\assets\2019-12-14-class" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\zzz\Desktop\yiyumo.githup.io\assets\blog_image\2020-02-15" />
+      <recent name="C:\Users\zzz\Desktop\yiyumo.githup.io\assets\blog_image" />
+      <recent name="C:\Users\zzz\Desktop\yiyumo.githup.io\assets\2020_02_15" />
+      <recent name="C:\Users\zzz\Desktop\yiyumo.githup.io\assets" />
       <recent name="C:\Users\zhouz\Desktop\yiyumo.githup.io\assets" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zzz\Desktop\yiyumo.githup.io\assets\blog_image\2020-02-15" />
+      <recent name="C:\Users\zzz\Desktop\yiyumo.githup.io\assets" />
+      <recent name="C:\Users\zhouz\Desktop\yiyumo.githup.io\assets\2019-12-14-class" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -64,6 +60,9 @@
       <option name="presentableId" value="Default" />
       <updated>1573226797836</updated>
       <workItem from="1575426336355" duration="15380000" />
+      <workItem from="1581841435856" duration="1977000" />
+      <workItem from="1582025464751" duration="11455000" />
+      <workItem from="1582040018405" duration="227000" />
     </task>
     <servers />
   </component>
@@ -75,10 +74,30 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582028455491">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1582028455491" />
+    <state x="489" y="74" key="RollbackChangesDialog" timestamp="1582032406717">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="489" y="74" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1582032406717" />
+    <state x="186" y="9" key="SettingsEditor" timestamp="1581842190131">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="186" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1581842190131" />
+    <state x="375" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1582040026814">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="375" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582040026814" />
   </component>
 </project>
