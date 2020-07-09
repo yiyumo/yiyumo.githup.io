@@ -2,25 +2,42 @@ uwsgi.ini 文件
 
 ```ini
 [uwsgi]
+; 监听的端口
 http = 0.0.0.0:8889
 #the local unix socket file than commnuincate to Nginx
-socket = 127.0.0.1:8001
+; socket = 127.0.0.1:8001
+; socket = /home/kzzf/project/OfferHelp/OfferHelp.sock
 # the base directory (full path)
-chdir = /home/projectroot/
+; 项目所在目录，和manage.py同级
+chdir = /home/zzz_lc_server/zzz
+; 虚拟环境所在目录
+;virtualenv = /root/miniconda3/envs/zzz_lc
+home = /root/miniconda3/envs/zzz_lc
+# 指定python
+pythonhome = /root/miniconda3/envs/zzz_lc/bin/python3
 # Django's wsgi file
-wsgi-file = mainsite/wsgi.py
+; 主应用中的wsgi文件
+wsgi-file = zzz/wsgi.py
+; 启动一个master进程，来管理其余的子进程
+master=True
 # maximum number of worker processes
-processes = 2
+processes = 4
 #thread numbers startched in each worker process
 threads = 2
 daemonize=uwsgi.log
-
 #monitor uwsgi status
 stats = 127.0.0.1:9191
 # clear environment on exit
 vacuum          = true
-pidfile=/home/projectroot/uwsgi.pid
-home=/home/pullin/.virtualenvs/projectroot
+; 保存主进程的pid，用来控制uwsgi服务
+pidfile=/home/zzz_lc_server/zzz/uwsgi.pid
+; 设置后台运行，保存日志
+daemonize=/home/zzz_lc_server/zzz/uwsgi.log
+; 设置每个工作进程处理请求的上限，达到上限时，将回收（重启）该进程。可以预防内存泄漏
+max-requests=5000
+# 服务停止时自动移除unix Socket和pid文件
+vacuum=true
+py-autoreload = 1
 ```
 
 nginx 配置
@@ -49,11 +66,11 @@ server {
 
     #django location
     location /media {
-        alias /home/projectroot/media;
+        alias /home/zzz_lc_server/zzz/media;
         }
 
-    location /django-static{
-        alias /home/projectroot/public;
+    location /static{
+        alias /home/zzz_lc_xerver/zzz/static;
         }
 
     location ^~ /api/ {
@@ -81,15 +98,17 @@ server {
         proxy_set_header Connection "upgrade";
         }
     # Vue location
-    root         /home/projectroot/dist;
+    
     location / {
-        try_files $uri $uri/ @router;
+        root /home/zzz_lc_server/dist;
         index index.html;
+        #确保刷新不出现404
+        try_files $uri $uri/ @router;
       }
     index login.html;
     location @router {
         rewrite ^.*$ /index.html last;
-       }
+    }
 }
 ```
 
@@ -99,14 +118,14 @@ server {
 ```shell script
 echo "Begin deploying the mainserver web service"
 echo "Temporary backup database"
-mysqldump -u用户名 -p密码 数据库名 > /home/pullin/mysql_bak_data/temporary/mainserver_$(date +%Y%m%d%H%M%S).sql #执行备份命令
-cd /home/projectroot/mainsite
+mysqldump -u用户名 -p密码 数据库名 > /home/zzz_lc_server/mysql_bak_data/temporary/mainserver_$(date +%Y%m%d%H%M%S).sql #执行备份命令
+cd /home/zzz_lc_server/
 git pull
 echo "Execute the migration file"
-/home/pullin/.virtualenvs/projectroot/bin/python manage.py migrate
-cd /home/projectroot
+cd /root/miniconda3/envs/zzz_lc/bin/python3 manage.py migrate
+cd /home/zzz_lc_server/zzz
 echo "restart uwsgi"
-/home/pullin/.virtualenvs/projectroot/bin/uwsgi --reload uwsgi.pid
+uwsgi --reload uwsgi.pid
 #rm uwsgi.log
 #/home/pullin/.virtualenvs/projectroot/bin/uwsgi uwsgi.ini
 sleep 3
@@ -115,3 +134,15 @@ echo "Deployment is complete"
 ```
 
 
+
+
+nginx 指令
+
+    $ /etc/init.d/nginx start  #启动
+    $ /etc/init.d/nginx stop  #关闭
+    $ /etc/init.d/nginx restart  #重启
+    
+    # 在部署完成之后一旦我们修改nginx的配置之后，使用reload会使我们的网址不会停止接收数据
+    $ /etc/init.d/nginx reload 
+    
+    $ nginx -t  # 查看配置是否有
