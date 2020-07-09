@@ -3,9 +3,9 @@ uwsgi.ini 文件
 ```ini
 [uwsgi]
 ; 监听的端口
-http = 0.0.0.0:8889
+;http = 0.0.0.0:8002   
 #the local unix socket file than commnuincate to Nginx
-; socket = 127.0.0.1:8001
+; socket = 0.0.0.0:8002
 ; socket = /home/kzzf/project/OfferHelp/OfferHelp.sock
 # the base directory (full path)
 ; 项目所在目录，和manage.py同级
@@ -39,6 +39,12 @@ max-requests=5000
 vacuum=true
 py-autoreload = 1
 ```
+
+---
+nginx访问后端链接地址就是这个地址，而不是http地址，必须注意，否则nignx的log就会显示以下错误：
+upstream prematurely closed connection while reading response header from upstre
+---
+
 
 nginx 配置
 ```editorconfig
@@ -74,7 +80,7 @@ server {
         }
 
     location ^~ /api/ {
-        rewrite ^/api/(.*)$ /$1 break;
+        rewrite ^/api/(.*)$ /$1 break;   #去掉api
         uwsgi_pass django;
         include /etc/nginx/uwsgi_params;
         }
@@ -112,6 +118,7 @@ server {
 }
 ```
 
+---
 
 启动项目脚本：
 
@@ -133,7 +140,7 @@ ps -ef|grep uwsgi
 echo "Deployment is complete"
 ```
 
-
+---
 
 
 nginx 指令
