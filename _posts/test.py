@@ -31,3 +31,7 @@ class Dog(object):
         self.name = name
 
 Dog.run()
+
+
+
+DrugIntroduce.objects.
